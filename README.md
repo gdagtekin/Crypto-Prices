@@ -4,7 +4,7 @@
 
 ## App Gif
 
-![App Gif](gif.gif)
+<img src="gif.gif" width="208" height="435">
 
 ## Features
 
