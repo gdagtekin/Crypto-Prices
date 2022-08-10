@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="recycler_loading_view_height">80dp</dimen>
+    <dimen name="bottom_nav_height">60dp</dimen>
+    <dimen name="crypto_card_radius">16dp</dimen>
+    <dimen name="crypto_info_radius">8dp</dimen>
+</resources>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.cryptodetail.CryptoDetailFragment">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rlCryptoDetailShimmer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include
+            layout="@layout/crypto_detail_shimmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <RelativeLayout
+        android:id="@+id/rlCryptoIconAndTopData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvTopDataCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="@dimen/crypto_info_radius"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview"
+                android:paddingHorizontal="16dp"
+                android:paddingTop="64dp"
+                android:paddingBottom="16dp">
+
+
+                <TextView
+                    android:id="@+id/tvCryptoPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="$60.000,5" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvCryptoPercentChange24Hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="4dp"
+                    android:elevation="0dp"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="@color/red_alpha"
+                    app:cardCornerRadius="@dimen/crypto_card_radius"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCryptoPrice">
+
+                    <TextView
+                        android:id="@+id/tvCryptoPercentChange24Hours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_gravity="center"
+                        android:paddingVertical="4dp"
+                        android:textColor="@color/red"
+                        android:textSize="14sp"
+                        tools:text="+1.68%" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <TextView
+                    android:id="@+id/tvLow24HInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/low_24h"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCryptoPrice" />
+
+
+                <TextView
+                    android:id="@+id/tvCrypto24HLowPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLow24HInfo"
+                    tools:text="$60.000,5" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:backgroundTint="@color/background"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCrypto24HLowPrice"
+                    app:layout_constraintEnd_toStartOf="@+id/tvCrypto24HHighPrice"
+                    app:layout_constraintStart_toEndOf="@+id/tvCrypto24HLowPrice"
+                    app:layout_constraintTop_toTopOf="@+id/tvCrypto24HLowPrice" />
+
+                <TextView
+                    android:id="@+id/tvHigh24HInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/high_24h"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCryptoPrice" />
+
+
+                <TextView
+                    android:id="@+id/tvCrypto24HHighPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHigh24HInfo"
+                    tools:text="$60.000,5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:id="@+id/rlCryptoIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/circle" />
+
+            <ImageView
+                android:id="@+id/ivCryptoIcon"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_currencies" />
+        </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvCryptoSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:elevation="0dp"
+            android:orientation="vertical"
+            app:cardBackgroundColor="@color/cardview"
+            app:cardCornerRadius="@dimen/crypto_info_radius">
+
+            <TextView
+                android:id="@+id/tvCryptoSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:padding="8dp"
+                android:paddingVertical="4dp"
+                tools:text="BTC"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvCryptoRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:elevation="0dp"
+            android:orientation="vertical"
+            app:cardBackgroundColor="@color/cardview"
+            app:cardCornerRadius="@dimen/crypto_info_radius">
+
+            <TextView
+                android:id="@+id/tvCryptoRank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:padding="8dp"
+                android:paddingVertical="4dp"
+                android:text="@string/rank"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cvTopDataCard"
+            android:layout_alignParentBottom="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvMarketCap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="14dp"
+                android:layout_marginEnd="8dp"
+                android:elevation="0dp"
+                app:cardCornerRadius="@dimen/crypto_info_radius"
+                app:layout_constraintEnd_toEndOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardview"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/tvMarketCapInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/market_cap"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvMarketCap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMarketCapInfo"
+                        tools:text="$766.662.101.835" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvVolume"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="14dp"
+                android:layout_marginStart="8dp"
+                android:elevation="0dp"
+                app:cardCornerRadius="@dimen/crypto_info_radius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardview"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/tvVolumeInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/volume_24h"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvVolume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvVolumeInfo"
+                        tools:text="$22.519.920.146" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvMarketCapDominance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="14dp"
+                android:layout_marginEnd="8dp"
+                android:elevation="0dp"
+                app:cardCornerRadius="@dimen/crypto_info_radius"
+                app:layout_constraintEnd_toEndOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvMarketCap">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardview"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/tvMarketDominanceInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/market_dominance"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvMarketDominance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMarketDominanceInfo"
+                        tools:text="40,90%" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvAllTimeHigh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="14dp"
+                android:layout_marginStart="8dp"
+                android:elevation="0dp"
+                app:cardCornerRadius="@dimen/crypto_info_radius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/cvMarketCap">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardview"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/tvAllTimeHighInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/all_time_high"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvAllTimeHigh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAllTimeHighInfo"
+                        tools:text="$780.942.031.291" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.50" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
+
+

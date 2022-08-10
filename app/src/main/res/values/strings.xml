@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Crypto Prices</string>
+    <string name="crypto_prices">Crypto Prices</string>
+    <string name="crypto_currencies">Cryptocurrencies</string>
+    <string name="wallet">Wallet</string>
+    <string name="detail">Detail</string>
+    <string name="low_24h">Low(24H)</string>
+    <string name="high_24h">High(24H)</string>
+    <string name="market_cap">Market Cap</string>
+    <string name="volume_24h">Volume(24H)</string>
+    <string name="market_dominance">Market Dominance</string>
+    <string name="rank">Rank #</string>
+    <string name="all_time_high">All Time High</string>
+</resources>

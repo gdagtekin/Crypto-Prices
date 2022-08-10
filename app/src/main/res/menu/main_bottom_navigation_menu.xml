@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_crypto"
+        android:icon="@drawable/ic_currencies"
+        android:title="@string/crypto_prices" />
+
+    <item
+        android:id="@+id/nav_wallet"
+        android:icon="@drawable/ic_wallet"
+        android:title="@string/wallet" />
+
+</menu>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:background="@color/primary"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:elevation="0dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:titleTextColor="@color/text_primary"
+            android:elevation="0dp"
+            android:background="@color/primary"
+            android:gravity="center"
+            app:titleCentered="true"
+            android:layout_height="?attr/actionBarSize">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/mainFragmentContainer"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="?attr/actionBarSize"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_main" />
+
+        <ProgressBar
+            android:id="@+id/mainProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:backgroundTint="@color/secondary"
+            android:progressTint="@color/green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.50" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- I gave up on adding the wallet part for now.  -->
+    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--        android:id="@+id/bottomNavigationView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="56dp"-->
+    <!--        android:layout_gravity="bottom"-->
+    <!--        android:layout_marginVertical="16dp"-->
+    <!--        android:layout_marginHorizontal="32dp"-->
+    <!--        app:itemIconTint="@drawable/bottom_nav_color"-->
+    <!--        app:itemTextColor="@drawable/bottom_nav_color"-->
+    <!--        android:elevation="0dp"-->
+    <!--        android:background="@drawable/nav_background_curved"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:menu="@menu/main_bottom_navigation_menu" />-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
